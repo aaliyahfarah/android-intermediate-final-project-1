@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.DetailStory">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:apiStatus="@{viewModel.apiStatus}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startGuidelineVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="10dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endGuidelineVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="10dp" />
+
+                <ImageView
+                    android:id="@+id/storyImageView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:cropToPadding="false"
+                    android:scaleType="centerCrop"
+                    app:imageUrl="@{viewModel.story.photoUrl}"
+                    app:layout_constraintDimensionRatio="16:9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                <TextView
+                    android:id="@+id/createdAtTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:textAlignment="viewStart"
+                    android:textStyle="italic"
+                    app:dateFormat="@{viewModel.story.createdAt}"
+                    app:layout_constraintEnd_toStartOf="@id/endGuidelineVertical"
+                    app:layout_constraintStart_toEndOf="@id/startGuidelineVertical"
+                    app:layout_constraintTop_toBottomOf="@id/storyImageView"
+                    tools:text="Uploaded at: Monday, June 5, 2023" />
+
+                <ImageView
+                    android:id="@+id/userIconImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toEndOf="@id/startGuidelineVertical"
+                    app:layout_constraintTop_toBottomOf="@id/createdAtTextView"
+                    app:srcCompat="@drawable/ic_baseline_person_24" />
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@{viewModel.story.name}"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/userIconImageView"
+                    app:layout_constraintEnd_toStartOf="@id/endGuidelineVertical"
+                    app:layout_constraintStart_toEndOf="@id/userIconImageView"
+                    app:layout_constraintTop_toTopOf="@id/userIconImageView"
+                    tools:text="Name" />
+
+                <TextView
+                    android:id="@+id/descriptionTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@{viewModel.story.description}"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@id/endGuidelineVertical"
+                    app:layout_constraintStart_toEndOf="@id/startGuidelineVertical"
+                    app:layout_constraintTop_toBottomOf="@id/nameTextView"
+                    tools:text="This is a picture of wet wood" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bangkit.storyappdicoding.ui.DetailStoryViewModel" />
+    </data>
+</layout>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">StoryAppDicoding</string>
+    <string name="Password_Error_Char">Password must be at least 8 characters</string>
+    <string name="register">Register</string>
+    <string name="dont_have_an_account_yet">Don\'t have an account yet?</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="description">Write your description...</string>
+    <string name="upload">Upload</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="name">Name</string>
+    <string name="join_with_us">Join with us!</string>
+    <string name="permission_denied">Permission Denied. Try Again</string>
+    <string name="upload_warning">Please select one photo</string>
+    <string name="choose_photo">Choose a photo</string>
+    <string name="empty_password">Password are required</string>
+    <string name="empty_email">Email are required</string>
+    <string name="empty_name">Name are required</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="register_success">Your account has been successfully created! Please sign in to continue</string>
+    <string name="success">Success!</string>
+    <string name="okay">Okay</string>
+    <string name="hello">Hello, %1$s</string>
+</resources>
